@@ -105,6 +105,14 @@ require("lazy").setup({
 						indicator = {
 							style = "underline",
 						},
+                        offsets = {
+                            {
+                                filetype = "NvimTree",
+                                text = "File Explorer",
+                                highlight = "Directory",
+                                separator = true
+                            }
+                        },
 						diagnostics = "nvim_lsp",
 						diagnostics_indicator = function(count, level)
 							local icon = level:match("error") and "E" or "W"
@@ -124,6 +132,20 @@ require("lazy").setup({
             config = function()
                 require("telescope").setup({})
                 require("telescope").load_extension("fzf")
+            end,
+        },
+        {
+            "windwp/nvim-autopairs",
+            event = "InsertEnter",
+            config = true
+        },
+        {
+            "nvim-lualine/lualine.nvim",
+            dependencies = { "nvim-tree/nvim-web-devicons" },
+            config = function()
+                require("lualine").setup({
+                    options = { theme = "auto"}
+                })
             end,
         },
 	},
