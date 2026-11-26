@@ -19,11 +19,11 @@ require("lazy").setup({
 	spec = {
 		-- add your plugins here
 		{
-			"folke/tokyonight.nvim",
+			"rebelot/kanagawa.nvim",
 			lazy = false,
 			priority = 1000,
 			config = function()
-				vim.cmd.colorscheme([[tokyonight-night]])
+				vim.cmd.colorscheme("kanagawa-dragon")
 			end,
 		},
 		{
